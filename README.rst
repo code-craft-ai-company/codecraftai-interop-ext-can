@@ -1,50 +1,55 @@
 ==================================================================
 Automation Mojo 'CAN' Interop Extension - automojo-interop-ext-can
 ==================================================================
-This is a template repository that can be used to quickly create a python package project.
+The Automation Mojo CAN interop extension provides Python tooling meant for
+test frameworks and automation workflows that integrate with CAN-based systems.
+This repository follows the Automation Mojo standards for readability,
+debuggability, and consistent test organization.
 
-=========================
-Features of this Template
-=========================
-* Machine Setup
-* Virtual Environment Setup (Poetry)
-* PyPi Publishing
+========
+Overview
+========
+* Python package project managed by Poetry.
+* Source code lives in ``source/packages``.
+* Tests live in ``source/testroots`` and mirror the source hierarchy.
+* Repository standards are documented in the ``userguide`` directory.
 
-========================
-How to Use This Template
-========================
-- Click the 'Use this template' button
-- Fill in the information to create your repository
-- Checkout your new repository
-- Change the following in 'repository-config.ini'
+==================
+Getting Started
+==================
+1. Run the repository setup script to create the local ``.env`` file::
 
-  #. 'PROJECT NAME'
-  #. 'REPOSITORY_NAME'
+     repository-setup/rehome-repository
 
-- If you have machine dependencies to add, put them in 'setup-ubuntu-machine'
-- Modify the pyproject.toml file with the correct package-name, author, publishing information, etc.
-- Rename the VSCODE workspace file 'mv workspaces/default-workspace.template workspaces/(project name).template'
-- Replace the README.rst file with your own README
-- Update the LICENSE.txt file with your copyright information and license.
-- Add your dependencies with python poetry 'poetry add (dependency name)'
-- Drop your package code in 'source/packages'
-- Modify the name of your package root in 'pyproject.toml'
+2. Create the virtual environment::
 
-  #. 'packages = [{include="(root folder name)", from="source/packages"}]'
+     development/setup-envrionment
 
-=================
-Code Organization
-=================
-* .vscode - Common tasks
-* development - This is where the runtime environment scripts are located
-* repository-setup - Scripts for homing your repository and to your checkout and machine setup
-* userguide - Where you put your user guide
-* source/packages - Put your root folder here 'source/packages/(root-module-folder)'
-* workspaces - This is where you add VSCode workspaces templates and where workspaces show up when homed.
+3. Install dependencies (if not handled by the setup scripts)::
 
-==========
+     poetry install
+
+=====================
+Development Workflow
+=====================
+* Add package code under ``source/packages``.
+* Add tests under ``source/testroots`` with a matching package hierarchy.
+* Favor clarity and debugging support over micro-optimizations.
+
+===================
+Testing Frameworks
+===================
+This repository supports multiple test frameworks. Refer to the user guide
+for details on when and how to use each framework:
+
+* ``unittest``
+* ``pytest``
+* ``testbase``
+
+=============
 References
-==========
-
-- `User Guide <userguide/userguide.rst>`
-- `Coding Standards <userguide/10-00-coding-standards.rst>`
+=============
+* `User Guide <userguide/userguide.rst>`_
+* `Coding Standards <userguide/10-00-coding-standards.rst>`_
+* `Code Organization <userguide/10-01-code-organization.rst>`_
+* `Naming Conventions <userguide/10-02-naming-conventions.rst>`_
