@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import MagicMock, patch
 import can
-from automojo.interop.ext.can.coordinator import CanCoordinator
+from automojo.interop.ext.can.cancoordinator import CanCoordinator
 
 class TestCanCoordinator(unittest.TestCase):
 
@@ -45,3 +45,6 @@ class TestCanCoordinator(unittest.TestCase):
         msg = coord.receive_message(timeout=0.1)
         self.assertEqual(msg, expected_msg)
         mock_bus.recv.assert_called_with(0.1)
+
+if __name__ == "__main__":
+    unittest.main()
