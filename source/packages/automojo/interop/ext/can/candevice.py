@@ -2,7 +2,7 @@
     CAN Device implementation.
 """
 from typing import List, Union
-from .coordinator import CanCoordinator
+from .cancoordinator import CanCoordinator
 
 class CanDevice:
     """
