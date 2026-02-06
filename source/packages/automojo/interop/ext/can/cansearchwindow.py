@@ -17,7 +17,7 @@ import threading
 import time
 import weakref
 from datetime import datetime
-from .candeviceevidence import CanDeviceEvidence
+from automojo.interop.ext.can.candeviceevidence import CanDeviceEvidence
 
 if TYPE_CHECKING:
     from automojo.interop.ext.can.canpresence import CanPresence
