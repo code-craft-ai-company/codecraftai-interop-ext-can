@@ -64,7 +64,7 @@ automojo-errors = {git = "https://github.com/automationmojo/automojo-errors.git"
 type = "git"
 url = "https://github.com/automationmojo/automojo-credentials.git"
 reference = "main"
-resolved_reference = "18ca80b0485a5851e7889673b0ccb60c09661010"
+resolved_reference = "cb7e4c4a4cd906799fda1e5d27c2d9daf5950e16"
 
 [[package]]
 name = "automojo-dataprofiles"
@@ -79,14 +79,12 @@ develop = false
 [package.dependencies]
 automojo-errors = {git = "https://github.com/automationmojo/automojo-errors.git", branch = "main"}
 automojo-interfaces = {git = "https://github.com/automationmojo/automojo-interfaces.git", branch = "main"}
-automojo-testbase = {git = "https://github.com/automationmojo/automojo-testbase.git", branch = "main"}
-automojo-this-app = {git = "https://github.com/automationmojo/automojo-this-app.git", branch = "main"}
 
 [package.source]
 type = "git"
 url = "https://github.com/automationmojo/automojo-dataprofiles.git"
 reference = "main"
-resolved_reference = "e6198b57152fb218c9b386115c13afc147075819"
+resolved_reference = "0cac20cc424af86545eebaaab96e8240fadfc3a2"
 
 [[package]]
 name = "automojo-errors"
@@ -163,7 +161,7 @@ rpyc = "^6.0.1"
 type = "git"
 url = "https://github.com/automationmojo/automojo-interop.git"
 reference = "main"
-resolved_reference = "ae7f123b4819af5fa7600c5d089f473df33e07d2"
+resolved_reference = "7c2ca56a358dca73e0b1f57cacffee0e8d553f01"
 
 [[package]]
 name = "automojo-landscaping"
@@ -189,7 +187,7 @@ automojo-waiting = {git = "https://github.com/automationmojo/automojo-waiting.gi
 type = "git"
 url = "https://github.com/automationmojo/automojo-landscaping.git"
 reference = "main"
-resolved_reference = "39e0ead7adc73b09a19568e2529050374bea22d8"
+resolved_reference = "eb0e0847c31d60d73437582ea3ac5bc3f12c41d0"
 
 [[package]]
 name = "automojo-networking"
@@ -233,7 +231,7 @@ requests = "^2.32.5"
 type = "git"
 url = "https://github.com/automationmojo/automojo-restclient-base.git"
 reference = "main"
-resolved_reference = "7f629ef31088c2c93a71b71ad2a517b6234af76d"
+resolved_reference = "38a340e32568bf346f8f7fdd73de15ba8e2f0cfe"
 
 [[package]]
 name = "automojo-runtime"
