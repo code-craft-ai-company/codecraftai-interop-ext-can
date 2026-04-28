@@ -1,55 +1,64 @@
-==================================================================
-Automation Mojo 'CAN' Interop Extension - automojo-interop-ext-can
-==================================================================
-The Automation Mojo CAN interop extension provides Python tooling meant for
-test frameworks and automation workflows that integrate with CAN-based systems.
-This repository follows the Automation Mojo standards for readability,
-debuggability, and consistent test organization.
+========================================
+Automation Mojo Interop Extension: CAN
+========================================
 
-========
-Overview
-========
-* Python package project managed by Poetry.
-* Source code lives in ``source/packages``.
-* Tests live in ``source/testroots`` and mirror the source hierarchy.
-* Repository standards are documented in the ``userguide`` directory.
+The ``automojo-interop-ext-can`` package provides CAN-bus protocol interop extensions and landscape extensions that allow for interoperability with CAN-bus devices during automation runs. It plugs into the ``automojo-interop`` and ``automojo-landscaping`` frameworks through the extension mechanism in ``automojo-extension``.
 
-==================
-Getting Started
-==================
-1. Run the repository setup script to create the local ``.env`` file::
+Highlights
+==========
 
-     repository-setup/rehome-repository
+- CAN-bus protocol handlers under ``interop/ext/can/``.
+- Landscape extension hooks so CAN-bus devices surface as first-class landscape resources.
+- Composable with other ``automojo-interop-ext-*`` packages through the shared extension mechanism.
 
-2. Create the virtual environment::
+Repository Structure
+====================
 
-     development/setup-envrionment
+- ``development/`` - Runtime environment scripts.
+- ``repository-setup/`` - Repository homing and setup scripts.
+- ``source/packages/`` - Package source code.
+- ``source/testroots/automojo/`` - TestBase test roots.
+- ``userguide/`` - Standards, conventions, and documentation.
 
-3. Install dependencies (if not handled by the setup scripts)::
+Environment Setup
+=================
 
-     poetry install
+When working in a Codex container:
 
-=====================
-Development Workflow
-=====================
-* Add package code under ``source/packages``.
-* Add tests under ``source/testroots`` with a matching package hierarchy.
-* Favor clarity and debugging support over micro-optimizations.
+.. code-block:: bash
 
-===================
-Testing Frameworks
-===================
-This repository supports multiple test frameworks. Refer to the user guide
-for details on when and how to use each framework:
+   ./development/setup-agent-container
 
-* ``unittest``
-* ``pytest``
-* ``testbase``
+For local development:
 
+.. code-block:: bash
+
+   ./repository-setup/rehome-repository
+   ./development/setup-envrionment
+
+Running Tests
 =============
-References
-=============
-* `User Guide <userguide/userguide.rst>`_
-* `Coding Standards <userguide/10-00-coding-standards.rst>`_
-* `Code Organization <userguide/10-01-code-organization.rst>`_
-* `Naming Conventions <userguide/10-02-naming-conventions.rst>`_
+
+Activate the virtual environment:
+
+.. code-block:: bash
+
+   source .venv/bin/activate
+
+Run the single-host test suite:
+
+.. code-block:: bash
+
+   testbase testing run --root source/testroots/automojo --includes=automojo.tests.singlehost.interop --output=./.output
+
+Standards and Conventions
+=========================
+
+- Naming conventions: ``userguide/10-02-naming-conventions.rst``
+- Code organization: ``userguide/10-01-code-organization.rst``
+- Coding standards: ``userguide/10-00-coding-standards.rst``
+
+Additional Resources
+====================
+
+- User guide entry point: ``userguide/userguide.rst``
