@@ -1,8 +1,8 @@
 
 import unittest
 from unittest.mock import MagicMock
-from automojo.interop.ext.can.candevice import CanDevice
-from automojo.interop.ext.can.cancoordinator import CanCoordinator
+from ccai.interop.ext.can.candevice import CanDevice
+from ccai.interop.ext.can.cancoordinator import CanCoordinator
 
 class TestCanDevice(unittest.TestCase):
     def test_init_and_properties(self):

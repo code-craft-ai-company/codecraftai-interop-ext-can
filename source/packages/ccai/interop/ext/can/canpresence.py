@@ -10,9 +10,9 @@ import weakref
 from typing import List, Set, Dict, Optional
 from datetime import datetime, timedelta
 
-from automojo.interop.ext.can.cancoordinator import CanCoordinator
-from automojo.interop.ext.can.cansearchwindow import CanSearchWindow
-from automojo.interop.ext.can.candeviceevidence import CanDeviceEvidence
+from ccai.interop.ext.can.cancoordinator import CanCoordinator
+from ccai.interop.ext.can.cansearchwindow import CanSearchWindow
+from ccai.interop.ext.can.candeviceevidence import CanDeviceEvidence
 
 class CanPresence:
     """

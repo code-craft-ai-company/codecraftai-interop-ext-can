@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "automojo-interop-ext-can"
-description = "Automation Mojo Interop Extension for CAN"
+name = "codecraftai-interop-ext-can"
+description = "Code Craft AI Interop Extension for CAN"
 version = "0.0.1"
 authors = []
 readme = "README.rst"
@@ -13,12 +13,12 @@ classifiers = [
 keywords = [
     "python"
 ]
-packages = [{include="automojo", from="source/packages"}]
+packages = [{include="ccai", from="source/packages"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
-automojo-interop = { git = "https://github.com/automationmojo/automojo-interop.git", branch = "main" }
-automojo-landscaping = { git = "https://github.com/automationmojo/automojo-landscaping.git", branch = "main" }
+codecraftai-interop = { git = "https://github.com/automationmojo/codecraftai-interop.git", branch = "main" }
+codecraftai-landscaping = { git = "https://github.com/automationmojo/codecraftai-landscaping.git", branch = "main" }
 python-can = "^4.6.1"
 
 [tool.poetry.group.dev.dependencies]
