@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import MagicMock, patch
 import can
-from automojo.interop.ext.can.cancoordinator import CanCoordinator
+from ccai.interop.ext.can.cancoordinator import CanCoordinator
 
 class TestCanCoordinator(unittest.TestCase):
 

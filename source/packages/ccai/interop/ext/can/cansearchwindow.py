@@ -8,7 +8,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -17,10 +17,10 @@ import threading
 import time
 import weakref
 from datetime import datetime
-from automojo.interop.ext.can.candeviceevidence import CanDeviceEvidence
+from ccai.interop.ext.can.candeviceevidence import CanDeviceEvidence
 
 if TYPE_CHECKING:
-    from automojo.interop.ext.can.canpresence import CanPresence
+    from ccai.interop.ext.can.canpresence import CanPresence
 
 
 class CanSearchWindowState:

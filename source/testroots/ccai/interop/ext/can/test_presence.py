@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import MagicMock
 import can
-from automojo.interop.ext.can.cancoordinator import CanCoordinator
-from automojo.interop.ext.can.canpresence import CanPresence
+from ccai.interop.ext.can.cancoordinator import CanCoordinator
+from ccai.interop.ext.can.canpresence import CanPresence
 
 class TestCanPresence(unittest.TestCase):
 

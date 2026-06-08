@@ -2,7 +2,7 @@
     CAN Device implementation.
 """
 from typing import List, Union, Optional
-from automojo.interop.ext.can.cancoordinator import CanCoordinator
+from ccai.interop.ext.can.cancoordinator import CanCoordinator
 
 class CanDevice:
     """

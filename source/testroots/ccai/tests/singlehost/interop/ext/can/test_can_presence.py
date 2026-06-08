@@ -2,7 +2,7 @@
 import time
 from unittest.mock import MagicMock, Mock
 
-from automojo.interop.ext.can.canpresence import CanPresence
+from ccai.interop.ext.can.canpresence import CanPresence
 
 def test_can_presence_discovery():
     """
