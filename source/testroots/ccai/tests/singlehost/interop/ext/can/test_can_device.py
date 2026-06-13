@@ -11,7 +11,7 @@ class TestCanDevice(unittest.TestCase):
         device = CanDevice(mock_coordinator, arbitration_id)
 
         self.assertEqual(device.arbitration_id, arbitration_id)
-        self.assertEqual(str(device), f"CanDevice(id={hex(arbitration_id)})")
+        self.assertEqual(str(device), f"CanDevice(id={hex(arbitration_id)}, ext=False)")
 
     def test_send(self):
         mock_coordinator = MagicMock(spec=CanCoordinator)
@@ -21,7 +21,7 @@ class TestCanDevice(unittest.TestCase):
         data = [0x01, 0x02, 0x03]
         device.send(data)
 
-        mock_coordinator.send_message.assert_called_once_with(arbitration_id, data)
+        mock_coordinator.send_message.assert_called_once_with(arbitration_id, data, is_extended_id=False)
 
 if __name__ == '__main__':
     unittest.main()
