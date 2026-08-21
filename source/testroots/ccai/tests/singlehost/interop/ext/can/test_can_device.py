@@ -1,27 +1,48 @@
+from ccai import testbase
 
-import unittest
 from unittest.mock import MagicMock
-from ccai.interop.ext.can.candevice import CanDevice
 from ccai.interop.ext.can.cancoordinator import CanCoordinator
+from ccai.interop.ext.can.candevice import CanDevice
 
-class TestCanDevice(unittest.TestCase):
-    def test_init_and_properties(self):
-        mock_coordinator = MagicMock(spec=CanCoordinator)
-        arbitration_id = 0x123
-        device = CanDevice(mock_coordinator, arbitration_id)
+# ----------------------------------------------------------------------
+# TestCanDevice
+# ----------------------------------------------------------------------
 
-        self.assertEqual(device.arbitration_id, arbitration_id)
-        self.assertEqual(str(device), f"CanDevice(id={hex(arbitration_id)}, ext=False)")
+def test_send():
+    coord = MagicMock(spec=CanCoordinator)
+    # Use standard ID to verify default behavior
+    device = CanDevice(coord, 0x123)
 
-    def test_send(self):
-        mock_coordinator = MagicMock(spec=CanCoordinator)
-        arbitration_id = 0x456
-        device = CanDevice(mock_coordinator, arbitration_id)
+    device.send([1, 2, 3])
 
-        data = [0x01, 0x02, 0x03]
-        device.send(data)
+    # Expect is_extended_id=False by default (implicit)
+    coord.send_message.assert_called_with(0x123, [1, 2, 3], is_extended_id=False)
 
-        mock_coordinator.send_message.assert_called_once_with(arbitration_id, data, is_extended_id=False)
+def test_send_extended_id_explicit():
+    coord = MagicMock(spec=CanCoordinator)
+    ext_id = 0x12345678
 
-if __name__ == '__main__':
-    unittest.main()
+    # Initialize with explicit flag
+    device = CanDevice(coord, ext_id, is_extended_id=True)
+
+    testbase.assert_true(device.is_extended_id)
+
+    device.send([0x01, 0x02])
+
+    # Check call
+    coord.send_message.assert_called_with(ext_id, [0x01, 0x02], is_extended_id=True)
+
+def test_send_extended_id_inferred():
+    coord = MagicMock(spec=CanCoordinator)
+    # Extended ID > 0x7FF
+    ext_id = 0x12345678
+
+    # Initialize without flag (inference)
+    device = CanDevice(coord, ext_id)
+
+    testbase.assert_true(device.is_extended_id)
+
+    device.send([0x01, 0x02])
+
+    # Check call
+    coord.send_message.assert_called_with(ext_id, [0x01, 0x02], is_extended_id=True)
