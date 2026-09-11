@@ -32,7 +32,9 @@ class CanCoordinator:
         """
         self._logger.info(f"Connecting to CAN bus {self._channel} ({self._bustype})")
         try:
-            self._bus = can.Bus(channel=self._channel, bustype=self._bustype, bitrate=self._bitrate)
+            # python-can 4.2 renamed the 'bustype' keyword to 'interface' and
+            # removes 'bustype' in 5.0; pass the value under its current name.
+            self._bus = can.Bus(channel=self._channel, interface=self._bustype, bitrate=self._bitrate)
             self._logger.info("Connected to CAN bus")
         except Exception as e:
             self._logger.error(f"Failed to connect to CAN bus: {e}")
