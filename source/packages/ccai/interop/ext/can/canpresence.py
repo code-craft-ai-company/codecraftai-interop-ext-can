@@ -7,7 +7,7 @@ import time
 import threading
 import uuid
 import weakref
-from typing import List, Set, Dict, Optional
+from typing import List, Set, Dict
 from datetime import datetime, timedelta
 
 from ccai.interop.ext.can.cancoordinator import CanCoordinator
